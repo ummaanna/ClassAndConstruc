@@ -1,0 +1,28 @@
+class Pessoa3 (var nome: String){
+
+var anos: Int? =null
+constructor(nome: String, ano : Int): this(nome){
+
+    this.anos = ano
+}
+
+    fun saudacao(){
+        println("Olá, meu nome é $nome e tenho $anos anos!")
+
+    }
+
+}
+
+
+fun main() {
+    val p2: Pessoa3 = Pessoa3("Nini")
+    val p1: Pessoa3 = Pessoa3("Lara", 2012)
+
+    p1.saudacao()
+    p2.saudacao()
+
+
+
+
+
+}
