@@ -1,0 +1,53 @@
+enum class Prioridade1{
+
+    BAIXA, MEDIANA, ALTA
+}
+
+// EXTENDENDO AS POSSIBILIDADES
+// retornando valores, é feito como se declara uma classe
+
+//é possivel fazer um override (uma sobre escrita)
+// quando vc pede para escrever p, ele pega o valor  e converte para uma string
+
+enum class Prioridade2(val id : Int){
+// QUNDO USAR O VALOR DE BAIXA FAZER UM OVERRIDE NA FUNÇÃO TOSTRING()
+    BAIXA(1){
+    override  fun toString(): String { // ao em vez de colocar baixa, vou colcoar um rerurn super baixa
+        return "Super baixa, não se preocupe"
+    }
+
+    },
+
+     MEDIA(5), ALTA(10)
+}
+// pode usar a classe enum como um tipo de variavel
+//class Alarme(var desc : String, p: Prioridade2)
+
+
+
+
+fun main (){
+        // para o rodar com o valor faz a concanetação com . (ponto) como se estivesse acessando a propiedade de uma classe
+    //println(Prioridade2.BAIXA.id)
+
+    // listando os valores de Propriedade 2
+    for (p in Prioridade2.values()){
+        // Override demostração
+        if (p.toString() == "MEDIA"){
+            println("É VERDADE!!")
+        }
+     //existe um atributo escondido na classe enum ($p.ordinal) representa a opsição que ele esta
+   println("$p - $p.id - ${p.ordinal}" ) }
+
+// pode usar enum como se fosse parametros de outras classes
+//Alarme("AVISO!", Prioridade2.ALTA)
+
+    /**
+     * Classe enum
+     * -> Como enumarar possibilidades
+     * -> usar possibilidades na classe enum (caso queira usar atributos e especificos para as propriedades
+     * -> Possibilidade de criar funções para clssses e valores da classe enum
+     */
+    
+
+}
