@@ -1,0 +1,33 @@
+/ Class mãe
+// open: diz que uma classe pode ser herdada
+open class  Maquiagem (val marca: String){
+
+        fun minhaMarca(){
+            println("Minha marca é $marca")
+        }
+
+}
+
+
+//Class filha
+
+class Palheita(marca: String, val num :Int) : Maquiagem(marca){ //chamar ando a classe mãe
+
+    fun usar(){}
+    fun usando(){}
+}
+
+
+
+// principal
+
+fun main (){
+
+    val m: Palheita = Palheita("EXO", 12)
+    with(m){
+
+        usar()
+        usando()
+        minhaMarca() // herdada da classe mãe
+    }
+}
