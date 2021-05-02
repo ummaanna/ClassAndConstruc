@@ -1,0 +1,47 @@
+interface Maquinaas {
+//interface pode definir metodos que precisam ser escritos pelas classes que assinam o contrato
+// interface não consegue ter estado (não posso ter estatdo)
+
+
+    fun ligar()
+    fun desligar() {
+        println("OFF")
+    }
+
+}
+
+// implementa a interface
+// para conseguir usar a variavel peso, é necessário um override
+class Celular() : Maquinaas {
+    override fun ligar() {
+
+    }
+
+}
+interface interface1  {
+        fun ola(){
+            println("Iniciando interface 1")
+        }
+
+
+}
+
+interface interface2  {
+    fun ola(){
+        println("Iniciando interface 2")
+    }
+
+}
+
+
+class Implementa : interface1, interface2{
+    override fun ola() {
+        //<> para diferncia as interfaces
+        super<interface1>.ola()
+    }
+
+}
+fun main() {
+
+
+}
