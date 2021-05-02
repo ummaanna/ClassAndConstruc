@@ -1,0 +1,48 @@
+open class  Maquiagens (val marca: String){
+// para poder sobrescrever uma função, também se útliza open
+  open  fun minhaMarca(){
+        println("Minha marca é $marca")
+    }
+
+}
+
+class Palheitas(marca: String, val num :Int) : Maquiagens(marca){ //chamar ando a classe mãe
+
+    // override (sobrescrever)
+
+    // quando aparece super.minha marca (por ex), esse super esta se referindo a classe mãe
+
+    override fun minhaMarca() {
+        println("Estou rescrevendo minha marca")
+        //super.minhaMarca() // tirar pois, vai mostra o que esta escrito na classe mãe
+    }
+    fun usar(){}
+    fun usando(){}
+
+
+    // overload(sobrecarga)
+
+    // metodos com mesmo nome + com assinaturas diferentes na mesma classe
+    fun overload ( i : Int) = println("Overload 1")
+    fun overload (i: String) = println("Overload 2")
+    // o Kotlin sabe quem chamar por causa do tipo de dados
+}
+
+fun main (){
+
+    val m: Palheitas = Palheitas("EXO", 12)
+    with(m){
+
+        usar()
+        usando()
+        minhaMarca()
+        overload("Nos")
+        overload(10)
+
+        /**
+         * Sobreposição (override): mesma assinatura (dos metodos) (feitos) em classes diferentes.
+         * Sobrecarga(overload): assituras diferentes (dos metodos) (feita na) mesma classe.
+         */
+
+    }
+}
