@@ -1,0 +1,35 @@
+class Maquinas (var marca: String){
+
+var nuc: Int =0
+    get() {
+        println("Get foi chamado")
+        return field
+    }
+    set(value) {
+        println("Set foi chamado")
+        field = value
+    }
+
+    fun ligar(){
+
+    }
+    fun processar(){
+
+    }
+    fun desligar(){
+
+    }
+}
+
+fun main(){
+
+    var m = Maquinas("Chromosome")
+// faceta apenas do kotlin
+    with(m){
+        ligar()
+        processar()
+        desligar()
+
+    }
+
+}
