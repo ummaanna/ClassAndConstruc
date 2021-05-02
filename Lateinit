@@ -1,0 +1,17 @@
+class Pessoa{
+    // lateinit é usado para iniciar uma variavel sem precisar colocar o valor. Assim, da para extanciar a classe,
+    //fazer alguma logoca que depois vai atribuir os valores dessa variavel
+
+       lateinit var nome : String
+        fun geradorDeNome(){
+
+            nome = "Lara"
+        }
+
+}
+
+fun main(){
+
+    val p = Pessoa()
+    p.geradorDeNome()
+}
