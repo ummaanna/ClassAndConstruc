@@ -1,0 +1,48 @@
+class Quadrado(val area: Float){
+    override fun toString() : String{
+        return "Quadrado(area=$area)"
+    }
+
+    override  fun equals(other: Any?):Boolean{
+
+        return super.equals(other)
+    }
+}
+// obter o mesmo resultdo do data class
+data class Triangulo(val area: Float)
+
+
+fun main(){
+    val q1 = Quadrado(10f)
+    val q2 = Quadrado(10f)
+
+
+    val t1 = Triangulo(10f)
+    val t2 = Triangulo(10f)
+
+    println(q1)
+    println(t1)
+
+
+    println("Igual")
+    println(q1 == q2)
+    println(t1 == t2)
+
+    println("hanscode")
+    // exibi codes diferentes por não ver os valores e sim posições
+    
+    
+    println(q1.hashCode())
+    println(q2.hashCode())
+
+// exibi o mesmo code
+    println(t1. hashCode()) 
+    println(t2. hashCode())
+
+    // copy
+
+    var t3 = t2.copy() // vai copiar tudo por serem data class
+
+    var q3 = q1.copy() // não funciona por não ser data class
+
+}
