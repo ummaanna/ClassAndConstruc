@@ -1,0 +1,32 @@
+class Constantes private constructor() {
+// as vezes a disponiblidade da classe esta tão presente e disponivel de maneira estatica, que é comum
+    //fechar o construtor da classe, desta forma , mesmo que quisesse não poderia estanciar a classe.
+    companion object banco{  // pode ou não ter nome
+        //usado para quando precisa de uma constante desse tipo,
+        // não precisa estanciar a classe, bastanta usar seus recursos
+        val TABLE = "Pessoa"
+
+        fun teste(){
+            println("Sou um medodo estatico")
+        }
+    }
+// tem que obrigatoriamente ter um nome
+    object vendas{
+
+    val TABLE_NAME = "Vendas"
+    object colunas {
+        val ID = "id"
+        val TOTAL = "total"
+    }
+
+}
+}
+
+fun main(){
+println(Constantes.banco.TABLE)
+    Constantes.banco.teste()
+    Constantes.vendas.colunas.ID
+
+    // isso é um constante que consegue usar sem extanciar a classe
+
+}
